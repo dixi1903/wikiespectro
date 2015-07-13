@@ -19,6 +19,7 @@ function fillChart(response) {
                 minValue: -10,
                 minorGridlines: {count: 4}
                },
+        explorer: { actions: ['dragToZoom', 'rightClickToReset'] },
         bubble: {textStyle: {fontSize: 11},
                  maxSize: 2
                 }
@@ -36,7 +37,8 @@ function readData() {
     
     
     query = new google.visualization.Query(dblocation);
-    query.setQuery("select *");
+    query.setQuery("select *"
+                  );
     query.send(fillChart);
 }
 
